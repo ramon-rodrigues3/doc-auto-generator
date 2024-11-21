@@ -204,15 +204,19 @@ def inserir_texto(texto, topico, sub_topico = None, paragrafo = None):
         print()
         texto_gerado[topico] = texto          
 
-def set_arquivo(arquivo):
+def set_arquivo(arquivo) -> None:
     global texto_gerado
     texto_gerado = arquivo
+
+def get_arquivo_str() -> str:
+    return"\n".join([paragrafo for topico in texto_gerado for sub in topico for paragrafo in sub])
 
 def arquivo_gerado():
     texto = "\n".join([paragrafo for topico in texto_gerado for sub in topico for paragrafo in sub])
     arquivo = BytesIO(bytes(texto, 'utf-8'))
     arquivo.name = 'arquivo'
     return arquivo
+
 # Tolls 
 tools = [
     {

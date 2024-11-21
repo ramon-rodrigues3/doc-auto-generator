@@ -1,11 +1,13 @@
-from langchain_openai.chat_models import ChatOpenAI
 from openai import OpenAI
 from langchain.pydantic_v1 import BaseModel, Field
 from langchain_core.utils.function_calling import convert_to_openai_function
 from typing import Optional
 from enum import Enum
 from json import loads
+from dotenv import load_dotenv, find_dotenv
 import generator
+
+load_dotenv(find_dotenv())
 
 # ENUMS
 class unidadeEnum(str, Enum):

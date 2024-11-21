@@ -2,6 +2,10 @@ import streamlit as st
 import generator, auto
 from openai import OpenAI
 from assistant import Topico
+from dotenv import load_dotenv,find_dotenv
+
+
+load_dotenv(find_dotenv())
 
 def gui_auto():
     client = OpenAI()
